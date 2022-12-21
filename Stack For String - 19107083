@@ -1,0 +1,18 @@
+class stack{
+private:
+    vector<char> v;
+public:
+    int getSize(){
+        return v.size();
+    }
+    char getTop(){
+        if(!v.size()) return NULL;
+        return v.back();
+    }
+    void push(char x){
+        v.push_back(x);
+    }
+    void pop(){
+        if(v.size()) v.pop_back();
+    }
+};
