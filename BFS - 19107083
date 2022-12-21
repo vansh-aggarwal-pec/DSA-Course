@@ -1,0 +1,16 @@
+void BFS(vector<vector<int>> &adj,int n,int sv){
+    queue<int> q;
+    vector<int> visited(n,false);
+    q.push(sv);
+    visited[sv] = true;
+    while (!q.empty()) {
+        cout <<  q.front() << endl;
+        int top = q.front();
+        q.pop();
+        for(auto v:adj[top]){
+            if(visited[v]) continue;
+            q.push(v);
+            visited[v] = true;
+        }
+    }
+}
