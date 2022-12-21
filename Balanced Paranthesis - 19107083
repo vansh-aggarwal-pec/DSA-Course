@@ -1,0 +1,14 @@
+bool checkBalanced(string &str,int n){
+    stack<char> stk;
+    for(int i=0;i<n;i++){
+        if(str[i] == ')'){
+            if(stk.empty())
+                return false;
+            else
+                stk.pop();
+        }
+        else
+            stk.push('(');
+    }
+    return stk.empty();
+}
