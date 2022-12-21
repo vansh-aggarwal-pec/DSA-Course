@@ -1,0 +1,9 @@
+void DFS(vector<vector<int>> &adj,int n,int cv,vector<bool> &visited){
+    if(visited[cv]) return;
+    cout << cv << endl;
+    visited[cv] = true;
+    for(auto v:adj[cv]){
+        if(visited[v]) continue;
+        DFS(adj, n, v, visited);
+    }
+}
