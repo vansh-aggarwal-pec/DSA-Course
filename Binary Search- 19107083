@@ -1,0 +1,11 @@
+int binarySearch(int *arr,int req,int lo,int hi){
+    if(lo > hi) return -1;
+    int mid =(lo+hi)/2;
+    if(arr[mid] == req)
+        return mid;
+    else if(arr[mid] > req)
+        hi = mid;
+    else
+        lo = mid;
+    return binarySearch(arr,req, lo, hi);
+}
