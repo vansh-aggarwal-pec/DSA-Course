@@ -1,0 +1,22 @@
+class Node{
+public:
+    Node *next;
+    int data;
+    Node(int data){
+        next = NULL;
+        this->data = data;
+    }
+    void insertAfterValue(int data,int reqVal,Node *head){
+        while (head != NULL && head-> data != reqVal) {
+            head = head->next;
+            if(head == NULL)
+                return;
+            else{
+                Node *newNode = new Node(data);
+                newNode->next = head->next;
+                head->next = newNode;
+            }
+        }
+    }
+};
+
